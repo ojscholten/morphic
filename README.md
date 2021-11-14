@@ -18,19 +18,20 @@ Metamorphism, as [You and Yim describe](https://profsandhu.com/cs5323_s18/yk_201
 
 ![image](https://github.com/ojscholten/poly/blob/main/pleomorphic_program.png)
 
-Programmatic pleomorphism is a little harder to implement, as it requires dynamic manipulation of an executing program in response to tests which probe its environment. It's important to note that a simple branch such as 'if OS is Unix, do x, else do y' is not pleomorphism. However, a program which does the same check and instead manipulates its own code during runtime can be described as being pleomorphic.
+Programmatic pleomorphism is a little harder to implement, as it requires dynamic manipulation of an executing program in response to tests which probe its environment. It's important to note that in this repository, a simple branch such as 'if OS is Unix, do x, else do y' is not considered pleomorphism. However, a program which does the same check but instead directly manipulates its own code during runtime can be described as being pleomorphic.
 
-## Judging Morphism
+## Quantifying Morphism
 In order to prove that the programs in this repository are actually morphic, several metrics can be used. The most obvious is comparing the hash of output programs. Two structurally different programs should have different hashes, but this doesn't go far enough for anything other than very basic morphism.
 
-A more specific way to judge morphism is to apply opcode ngram analysis under the assumption that the more different the opcode ngram frequencies between any two programs are, the more morphically distant they are. The [`pysan`](https://pysan.org) library is used to run these analyses and plot opcode frequencies.
+A more specific way to judge morphism is to apply opcode ngram analysis under the assumption that the more different the opcode ngram frequencies between any two programs are, the more morphically distant they are. The [`pysan`](https://pysan.org) library is used to run these analyses and plot opcode frequencies. All analysis code is written in Python and is avaliable in the `analysis.ipynb` file.
 
-## Files
+## Program Files
 - `polymorph.cpp` - a polymorphic engine
 - `metamorph.cpp` - a metamorphic engine
 - `pleomorph.cpp` - an example pleomorphic program
 - `host.cpp` - an example program used by the *code integration* capabilities in `metamorph.cpp`
 - `lab.cpp` - testing and management program
+- `analysis.ipynb` - morphism analysis using [`pysan`](https://pysan.org)
 
 ## Execution
 To run each of the programs in this repository, you just need to clone the repository, compile each of the programs with the following syntax;
