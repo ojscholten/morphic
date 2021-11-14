@@ -1,4 +1,4 @@
-# `morphic ` C++ Lab
+# `morphic` C++ Lab
 
 `this repository is currently under construction`
 
