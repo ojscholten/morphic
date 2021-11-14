@@ -8,11 +8,15 @@ This repository contains demonstrations of various types and combinations of mor
 - [metamorphism](https://en.wikipedia.org/wiki/Metamorphic_code) - a program which outputs a functional copy of itself with a different structure
 - [pleomorphism](https://en.wikipedia.org/wiki/Pleomorphism_(microbiology)) - a program which can change its structure in response to its environment
 
-![image](https://github.com/ojscholten/poly/blob/main/engine.png)
+![image](https://github.com/ojscholten/poly/blob/main/polymorphic_engine.png)
 
 In practice, each of the types of morphism above equate to relatively simple implementations. First, polymorphism can be achieved through the use of a polymorphism engine - a construct which acts to generate unique encryption and decryption functions which it then applies to a program. Simply encrypting a program does not make it polymorphic, but creating many [unique decryptors](https://www.youtube.com/watch?v=Jsohdah8ZCg&t=175s) for it and prepending them does. The term 'unique' when describing decryptors can mean applying obfuscation techniques used in metamorphism.
 
+![image](https://github.com/ojscholten/poly/blob/main/metamorphic_engine.png)
+
 Metamorphism, as [You and Yim describe](https://profsandhu.com/cs5323_s18/yk_2010.pdf), makes use of obfuscation techniques to evolve a program into new generations. Practically speaking, this means implementing a number of obfuscation techniques including `dead-code insertion`, `register reassignment`, `subroutine reordering`, `instruction substitution`, `code transposition`, and `code integration`. The final technique requires a 'host' program into which the metamorphic program will be integrated, so a very simple host program is provided.
+
+![image](https://github.com/ojscholten/poly/blob/main/pleomorphic_program.png)
 
 Programmatic pleomorphism is a little harder to implement, as it requires dynamic manipulation of an executing program in response to tests which probe its environment. It's important to note that a simple branch such as 'if OS is Unix, do x, else do y' is not pleomorphism. However, a program which does the same check and instead manipulates its own code during runtime can be described as being pleomorphic.
 
