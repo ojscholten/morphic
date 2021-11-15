@@ -20,6 +20,9 @@ Metamorphism, as [You and Yim describe](https://profsandhu.com/cs5323_s18/yk_201
 
 Programmatic pleomorphism is a little harder to implement, as it requires dynamic manipulation of an executing program in response to tests which probe its environment. It's important to note that in this repository, a simple branch such as 'if OS is Unix, do x, else do y' is not considered pleomorphism. However, a program which does the same check but instead directly manipulates its own code during runtime can be described as being pleomorphic.
 
+## Levels of Morphism
+Each of the types of morphism above can happen at different stages of a program's life cycle. For example, a program may be source-code metamorphic, or binary metamorphic. The first requires reading in the source code of the original program, modifying it, and recompiling it in place of the original. The second requires runtime modification of the compiled program itself (and is much more technically involved). This repository focuses on source-code morphism (for now), but will branch out into runtime morphism once all of the basics have been implemented.
+
 ## Quantifying Morphism
 In order to prove that the programs in this repository are actually morphic, several metrics can be used. The most obvious is comparing the hash of output programs. Two structurally different programs should have different hashes, but this doesn't go far enough for anything other than very basic morphism.
 
@@ -41,3 +44,9 @@ To run each of the programs in this repository, you just need to clone the repos
 Which will compile the C++ code into a program called `program`, which can be executed using `./program`
 
 Good luck! :)
+
+## Links, Tips, & Resources
+
+- [Size is Everything](https://www.muppetlabs.com/~breadbox/software/tiny/teensy.html)
+- get the assembly code of a program using the `gcc` compiler with `-S`
+- calling [`strip`](https://man7.org/linux/man-pages/man1/strip.1.html) on files removes extra bits (*pro tip, type `man strip` in terminal, not google)
